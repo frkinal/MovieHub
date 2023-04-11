@@ -1,8 +1,9 @@
 import React from "react";
 import Movies from "@/components/Movies";
-import Layout from "./index";
+import Layout from "./layout";
 const Page = async ({ searchParams }) => {
   console.log(searchParams.genre);
+  console.log("adadkadadlasdjladks");
   const res = await fetch(
     `https://api.themoviedb.org/3/${
       searchParams.genre ? "movie/" + searchParams.genre : "trending/all/day"
@@ -12,11 +13,11 @@ const Page = async ({ searchParams }) => {
   const data = await res.json();
   console.log(data, "data");
   return (
-    <div>
-      {data?.results?.map((item, index) => {
+    <Layout>
+      {/* {data?.results?.map((item, index) => {
         return <Movies item={item} key={index} />;
-      })}
-    </div>
+      })} */}
+    </Layout>
   );
 };
 export default Page;

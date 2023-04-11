@@ -27,7 +27,7 @@ const Header = () => {
         <BiSearch size={25} />
       </div>
       <Theme />
-      {menu.map((item, index) => {
+      {menu?.map((item, index) => {
         return <MenuItem item={item} key={index} />;
       })}
     </div>
