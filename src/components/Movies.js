@@ -8,12 +8,11 @@ const Movies = ({ item }) => {
   return (
     <div
       onClick={() => router.push(`/movie/${item?.id}`)}
-      className="min-w-[450px] relative imgContainer cursor-pointer"
+      className="sm:min-w-[300px] sm:h-[300px] md:min-w-[400px] md:h-[300px] min-w-[450px] h-[300px] relative imgContainer cursor-pointer"
     >
       <Image
         style={{ objectFit: "contain" }}
-        width={450}
-        height={300}
+        fill
         src={`https://image.tmdb.org/t/p/original/${
           item?.backdrop_path || item?.poster_path
         }`}

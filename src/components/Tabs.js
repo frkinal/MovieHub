@@ -21,7 +21,7 @@ const Tabs = () => {
     },
   ];
   return (
-    <div className="p-5 m-5 bg-gray-100 dark:bg-gray-900 flex items-center justify-center gap-7">
+    <div className="flex items-center gap-5 h-20 p-5 mx-10 bg-gray-100 dark:bg-gray-900 rounded-lg justify-center">
       {tabs.map((item, index) => {
         return (
           <Link

@@ -25,25 +25,29 @@ const Header = () => {
   };
 
   return (
-    <div className="flex items-center gap-5 h-20 p-5">
-      <div className="bg-amber-600 rounded-lg p-3 text-2xl font-bold">
-        MovieHub
+    <div className="flex justify-between items-center gap-5 h-20 p-5">
+      <div className="flex flex-1 ">
+        <div className="bg-amber-600 rounded-lg p-3 text-2xl text-black font-bold">
+          MovieHub
+        </div>
+        <div className="flex mx-5 items-center justify-center rounded-lg border p-3">
+          <input
+            value={keyword}
+            onKeyDown={searchFunc}
+            type="text"
+            onChange={(e) => setKeyword(e.target.value)}
+            placeholder="Film Arayiniz"
+            className="flex-1 bg-transparent"
+          />
+          <BiSearch size={25} />
+        </div>
       </div>
-      <div className="flex flex-1 items-center gap-2 rounded-lg border p-3">
-        <input
-          value={keyword}
-          onKeyDown={searchFunc}
-          type="text"
-          onChange={(e) => setKeyword(e.target.value)}
-          placeholder="Film Arayiniz"
-          className="outline-none flex-1 bg-transparent"
-        />
-        <BiSearch size={25} />
+      <div className="flex gap-5">
+        <Theme />
+        {menu?.map((item, index) => {
+          return <MenuItem item={item} key={index} />;
+        })}
       </div>
-      <Theme />
-      {menu?.map((item, index) => {
-        return <MenuItem item={item} key={index} />;
-      })}
     </div>
   );
 };
